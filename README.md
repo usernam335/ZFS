@@ -54,19 +54,19 @@
 <img width="602" height="252" alt="zfs14_1" src="https://github.com/user-attachments/assets/d3b8ed1b-2316-4b9e-ac32-851b8d18c5cf" />
 
 
-      **zfs set compression=lzjb otus_pool/fs1**
-      **zfs set compression=lz4 otus_pool/fs2**
-      **zfs set compression=gzip otus_pool/fs3**
-      **zfs set compression=zle otus_pool/fs4**
+      zfs set compression=lzjb otus_pool/fs1
+      zfs set compression=lz4 otus_pool/fs2
+      zfs set compression=gzip otus_pool/fs3
+      zfs set compression=zle otus_pool/fs4
 
 4. Скопируем файлы из /var/log/* в наши файловые системы:
 
    <img width="571" height="92" alt="zfs15" src="https://github.com/user-attachments/assets/b5a5f415-32ba-47f3-9f64-a0ec68ccde13" />
 
-         **cp -r /var/log/* /otus_pool/fs1**
-         **cp -r /var/log/* /otus_pool/fs2**
-         **cp -r /var/log/* /otus_pool/fs3**
-         **cp -r /var/log/* /otus_pool/fs4**
+         cp -r /var/log/* /otus_pool/fs1
+         cp -r /var/log/* /otus_pool/fs2
+         cp -r /var/log/* /otus_pool/fs3
+         cp -r /var/log/* /otus_pool/fs4
 
 5. Определим алгоритм с наилучшим сжатием с помощью команд:
    
@@ -74,14 +74,14 @@
    <img width="645" height="451" alt="zfs16" src="https://github.com/user-attachments/assets/08f71b6b-dd38-4aa4-b394-d6e1988f6700" />
 
    
-         **zfs get compressratio**
+         zfs get compressratio
 
+______________________________________________________________________________________
+         zfs list
 
-         **zfs list**
+_____________________________________________________________________________________
 
-
-
-         **zfs get compression**
+         zfs get compression
 
 
 
