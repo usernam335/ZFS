@@ -73,15 +73,15 @@
 
    <img width="645" height="451" alt="zfs16" src="https://github.com/user-attachments/assets/08f71b6b-dd38-4aa4-b394-d6e1988f6700" />
 
-   
-       zfs get compressratio
+
+         zfs get compressratio
 
 ______________________________________________________________________________________
-            zfs list
+      zfs list
 
 _____________________________________________________________________________________
 
-            zfs get compression
+      zfs get compression
 
 
 
