@@ -18,5 +18,18 @@
 восстановить файл локально. zfs receive;
 найти зашифрованное сообщение в файле secret_message.
 
-#1 Создадим pool:  
+# 1 Создадим pool:  
+
+<img width="941" height="148" alt="zfs11" src="https://github.com/user-attachments/assets/bbc86db7-9ccf-4604-b312-b45ed36b8260" />
+
     **zpool create -f otus_pool mirror sdb sdc**
+
+
+# 2 Создадим файловые системы в pool:
+   
+   <img width="606" height="335" alt="zfs12" src="https://github.com/user-attachments/assets/21948f53-0949-4421-80a4-d2036dcc4257" />
+
+      **zfs create otus_pool/fs1**
+      **zfs create otus_pool/fs2**
+      **zfs create otus_pool/fs3**
+      **zfs create otus_pool/fs4**
