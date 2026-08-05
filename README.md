@@ -84,8 +84,72 @@ ________________________________________________________________________________
       zfs get compression
 
 
+Самым лучшим алгоритмом сжатия является gzip.
 
 
+# 2 Определить настройки пула
+
+# 2.1. С помощью команды zfs import собрать pool ZFS.
+
+   2.1.1. Для сборки пула командой zfs import я удалю свой пул:
+
+<img width="753" height="254" alt="zfs21" src="https://github.com/user-attachments/assets/9581ca56-b26b-4eb7-89f6-19577b4618f3" />
+
+
+      zpool destroy otus_pool
+
+   2.1.2. Собираю и переименовываю пул 
+
+<img width="967" height="349" alt="zfs22" src="https://github.com/user-attachments/assets/090d59ed-5ef6-4e96-9eab-99c18012cc2b" />
+
+
+      zpool import -D otus_pool otus_import
+
+ # 2.2. Командами zfs определить настройки:
+       
+   <img width="592" height="332" alt="zfs23" src="https://github.com/user-attachments/assets/e3545416-bca7-49af-94e1-47b608b1d244" />
+
+       
+ 2.2.1. Размер хранилища:  
+ 
+       zfs get available otus_import
+
+2.2.2. Тип pool:
+
+      zfs get readonly otus_import
+
+2.2.3. Значения recordsize:
+
+      zfs get recordsize otus_import
+
+2.2.4. Какое сжатие используется:
+
+      zfs get compression otus_import
+
+2.2.5. Какая контрольная сумма используется:
+
+      zfs get checksum otus_import
+
+# 3. Работа со снапшотами:
+
+   3.1. Скопировать файл из удаленной директории:
+
+   <img width="1656" height="128" alt="zfs31" src="https://github.com/user-attachments/assets/471b157e-89f2-48e0-872d-c2411505d302" />
+
+
+         wget -O otus_task2.file --no-check-certificate https://drive.usercontent.google.com/download?id=1wgxjih8YZ-cqLqaZVa0lA3h3Y029c3oI&export=download
+
+
+   3.2. Восстановить файл локально. zfs receive и найти зашифрованное сообщение в файле secret_message:
+
+
+<img width="720" height="95" alt="zfs32" src="https://github.com/user-attachments/assets/aa3e8e96-7f38-4208-a0c6-646c02701a12" />
+
+
+         find otus_import/test -name "secret_message"
+_______________________________________________________________________________________________________________
+
+         cat /otus_import/test/task1/file_mess/secret_message
 
 
 
